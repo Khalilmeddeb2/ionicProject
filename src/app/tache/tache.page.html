@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      TodoList
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin">
+    <h1>Aujourd'hui </h1>
+  </div>
+
+  <div class="ion-margin">
+    <h4>{{date | date:'yyyy-MM-dd' }} </h4>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let t of taches" color="dark" (click)="check(t.checked, t.date)">
+      <ion-checkbox slot="start" color="success" ngModel="{{t.checked}}"></ion-checkbox>
+      <ion-label><h1 [ngStyle]="{'text-decoration': t.checked ? 'line-through' : 'none'}">{{t.title}}</h1> </ion-label>
+      <ion-label><h1 [ngStyle]="{'text-decoration': t.checked ? 'line-through' : 'none'}">{{t.date | date: 'yyyy-MM-dd'}}</h1></ion-label>
+    </ion-item>
+    <br>
+    <div *ngIf="show">
+      <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+      <input formControlName="title" type="text" class="form-control" placeholder="saisir une tache" >
+      <ion-button type="submit">add</ion-button>
+      </form>
+    </div>
+    
+
+    <br>
+    <br>
+    <br>
+    <br>
+  </ion-list>
+  
+  <ion-button *ngIf="!show" (click)="add()" color="dark" type="submit" expand="block" >ajouter une tache 
+  <ion-icon slot="start" name="add"></ion-icon>
+  </ion-button>
+  <ion-button *ngIf="show" (click)="add()" color="dark" expand="block" >annuler 
+    </ion-button>
+  
+
+</ion-content>

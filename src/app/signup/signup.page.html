@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title>
-      Log In
+      Sign Up
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,10 +13,10 @@
         <ion-img src="assets/images/logo.png" alt=""></ion-img>
       </ion-col>
     </ion-row>
-
+   
   </ion-grid>
   <div class="ion-margin">
-    <form [formGroup]="form" (ngSubmit)="login()">
+    <form [formGroup]="form" (ngSubmit)="signUp()">
       <div>
         <input type="email" class="form-control" placeholder="Email" formControlName="email" name="email">
       </div>
@@ -26,15 +26,11 @@
     </div>
         <br>
       <div>
-          <ion-button  color="danger" type="submit" expand="block">Sign In</ion-button>
+          <ion-button  color="success" type="submit" expand="block">Register</ion-button>
       </div>
     </form>
-        <ion-button [routerLink]="['/signup']" color="success" type="submit" >Register</ion-button>
-        <ion-button color="secondary">Forget Password</ion-button>
-      </div>
+  </div>
+  
 
-   
-
-
-
+  
 </ion-content>

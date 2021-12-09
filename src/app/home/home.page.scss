@@ -1,27 +1,20 @@
-#container {
-  text-align: center;
+input {
+  /* Pour s'assurer que tous les champs texte ont la même police.
+     Par défaut, les textarea ont une police monospace */
+  font: 1em sans-serif;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  /* Pour que tous les champs texte aient la même dimension */
+  width: 1500px;
+  height: 40px;
+  background-color: white;
+  box-sizing: border-box;
+  
+
+  /* Pour harmoniser le look & feel des bordures des champs texte */
+  border: 2px solid ;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+input:focus, textarea:focus {
+  /* Pour souligner légèrement les éléments actifs */
+  border-color: #000;
+  color: black;
 }
